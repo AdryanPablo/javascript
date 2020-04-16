@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 46</title>
+</head>
+<body>
+
+    <p id = 'texto'>CFB Cursos - Curso de Javascript - Aula 46 do curso de javascript</p>
+
+    <script>
+
+        var texto = document.getElementById('texto').innerHTML
+        var curso = 'Curso'
+
+        document.write(`<p>${texto.match('Curso')}: `)          // Mostra a primeira ocorrência de curso;
+        document.write(`${texto.match(`${curso}`).length}</p>`)    // Mostra quantas vezes foram encontradas a palavra pesquisada.
+
+        document.write(`<p>${texto.match(/Curso/g)}: `)         // Procura por todas as ocorrências da palavra;
+        document.write(`${texto.match(/Curso/g).length}</p>`)   // Quantidade de todas as ocorrências.
+
+        document.write(`<p>${texto.match(/Curso/ig)}: `)        // Todas as ocorrências sem case-sensitive;
+        document.write(`${texto.match(/Curso/ig).length}</p>`)  // Quantidade de ocorrências sem case-sensitive.
+
+        document.write(`<p>${texto.match(/[oa]/ig)}: `)         // Ocorrências das letras "a" e "o";
+        document.write(`${texto.match(/[o|a]/ig).length}</p>`)   // Quantidade de ocorrências.
+
+        document.write(`<p>${texto.match(/[^oa]/ig)}: `)        // Todos os caracteres, exceto "o" e "a";
+        document.write(`${texto.match(/[^oa]/ig).length}</p>`)  // Quantidade de caracteres, menos as exceções.
+
+        document.write(`<p>${texto.match(/[a-g]/ig)}: `)        // Caracteres de "a" até "g";
+        document.write(`${texto.match(/[a-g]/ig).length}</p>`)  // Quantidade.
+
+        document.write(`<p>${texto.match(/[\d]/ig)}: `)         // Pesquisa por números;
+        document.write(`${texto.match(/[\d]/ig).length}</p>`)
+    
+    </script>
+    
+</body>
+</html>

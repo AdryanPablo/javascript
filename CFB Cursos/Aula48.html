@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 48</title>
+</head>
+<body>
+    <p id = 'texto1'>CFB Cursos</p>
+    <p id = 'texto2'>Curso de Javascript</p>
+
+    <script>
+
+        var texto1 = document.getElementById('texto1').innerHTML
+        var texto2 = document.getElementById('texto2').innerHTML
+
+        var index1 = texto1.indexOf('C')
+        var index2 = texto1.lastIndexOf('C')
+
+        document.write(`<p>A letra "C" foi encontrada primeiro na ${index1}ª posição e por último na ${index2}ª posição da primeira frase.</p>`)
+
+        var comparação = texto1.localeCompare(texto2)
+
+        if (comparação == 0) {
+
+            document.write('<p>As strings são iguais.</p>')
+
+        } else {
+
+            document.write('<p>As strings são diferentes.</p>')
+
+        }
+
+        var localização = texto1.slice(0, 3)
+
+        document.write(`<p>${localização}</p>`)
+
+        var palavras1 = texto1.split()
+        var palavras2 = texto2.split(" ")
+
+        document.write(`<p>${palavras1}</p>`)
+        document.write(`<p>${palavras2}</p>`)
+        document.write(`<p>${palavras2[0]}</p>`)
+
+        var corte = texto2.substr(9, 10)
+
+        document.write(`<p>${corte}</p>`)
+
+        var maiúscula = texto2.toUpperCase()
+        var minúscula = texto2.toLowerCase()
+
+        document.write(`<p>${maiúscula}</p>`)
+        document.write(`<p>${minúscula}</p>`)
+
+    </script>
+    
+</body>
+</html>

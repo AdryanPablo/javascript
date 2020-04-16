@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 47</title>
+</head>
+<body>
+
+    <p id = 'texto1'>CFB Cursos - Curso de Javascript</p>
+    <p id = 'texto2'>Aula 47 do curso de javascript</p>
+
+    <script>
+
+        var texto1 = document.getElementById('texto1').innerHTML
+        var texto2 = document.getElementById('texto2').innerHTML
+
+        document.write(`<p>A palavra "curso" aparece pela primeira vez na `)
+        document.write(`${texto1.search(/curso/i) + 1} ª posição.</p>`)          // Primeira ocorrência, sem case-sensitive.
+
+        document.write(`<p>${texto1.replace(/javascript/ig, 'python')}</p>`)     // Substitui uma string por outra.
+
+        document.write(`<p>${texto1.charAt(0)}: `)       // Caractere numa posição x.
+        document.write(`${texto1.charCodeAt(0)}</p>`)    // Código de um caractere numa posição x.
+
+        document.write(`<p>${String.fromCharCode(67)}</p>`)     // Exibe o caractere através da especificação do seu código.
+
+        document.write(`<p>${texto1.concat(' - ', texto2)}</p>`)    // Concatena strings.
+    
+    </script>
+    
+</body>
+</html>

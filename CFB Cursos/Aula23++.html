@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 23++</title>
+</head>
+<body>
+    <div>
+
+        <p id = "valor">Valor: </p>
+
+    </div>
+
+    <script>
+
+        var valorDoParágrafo = document.getElementById('valor')
+
+        try {
+
+            var númeroDoUsuário = parseInt(window.prompt('Digite um número: '))
+
+            if (isNaN(númeroDoUsuário) == true) {
+
+                throw new Error ('Erro: Digite um número!')
+
+            }
+
+            valorDoParágrafo.innerHTML += númeroDoUsuário
+
+        } catch (exceção) {
+
+            valorDoParágrafo.innerHTML = exceção.message
+
+        }
+
+    </script>    
+</body>
+</html>

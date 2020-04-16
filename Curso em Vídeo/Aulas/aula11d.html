@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Aula 11 d </title>
+
+    <style>
+        body{
+            background-color: #cccccc;
+            font-family: Ubuntu;
+            font-size: 20pt;
+            color: #333333;
+        }
+        input#país{
+            width: 100px;
+            height: 20px;
+
+            font-family: Ubuntu;
+            font-size: 14pt;
+            color: #333333;
+        }
+        input#botão{
+            width: 100px;
+            height: 25px;
+
+            font-family: Ubuntu;
+            font-size: 14pt;
+            color: #333333;
+        }
+        div#resultado{
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    País: <input type="text" name="país" id="país">
+    <input type="button" value="Verificar" id="botão" onclick="verificar()">
+    <div id="resultado"></div>
+
+    <script>
+        function verificar(){
+            país = window.document.querySelector('input#país').value
+            res = window.document.querySelector('div#resultado')
+
+            document.getElementById
+
+            res.innerHTML = `Você mora em ${país}.`
+
+            if(país == 'Brasil'){
+                res.innerHTML += `<p>Você é brasileiro.</p>`
+            }
+            else{
+                res.innerHTML += `<p>Você é estrangeiro.</p>`
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 22</title>
+    <script>
+
+        /*
+        try{
+
+            document.writi('Hello, world!')
+
+        } catch (e) {
+
+            document.write('Erro!')
+            console.log('Mensagem de erro: ' + e.message)
+
+        }
+        */
+
+        try {
+
+            num = parseInt(window.prompt('Digite um número entre 1 e 10: '))
+
+            if (isNaN(num) == true) {  // Teste se o número está entre 1 e 10
+                
+                throw new Error ('Valor inválido! Digite um número entre 1 e 10. Letras ou caracteres não são aceitáveis.')
+
+            } else if (num < 1 || num > 10) {    // Teste se o valor digitado não é um número
+
+                throw new Error ('Número inválido! Digite um número entre 1 e 10.')
+
+            }
+
+            document.write(`Valor: ${num}`)
+
+        } catch (e) {
+
+            console.log(e.message)
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 27</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form id = 'login'>
+        <label>Nome: </label>
+        <input type = 'text' id = 'nome' value = 'Digite seu nome'><br/>
+        <label>Senha: </label>
+        <input type = 'password' id = 'senha' value = 'Digite sua senha'><br/>
+        <input type = 'submit' id = 'logar' value = 'Login'>
+    </form>
+
+    <hr/>
+
+    <script>
+
+        var formulários = document.forms
+        var conteúdoDoFormulário = document.forms.namedItem('login').innerHTML
+        var nome = document.forms.namedItem('login').elements[0].value
+
+        document.write(`Formulários na página: ${formulários.length} <br/>`)
+        document.write(`<div style = 'opacity: 50%'>${conteúdoDoFormulário}</div>`)
+        document.write(nome)
+
+    </script>
+    
+</body>
+</html>

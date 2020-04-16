@@ -1,0 +1,43 @@
+<!DOCTYPE "html">
+<html>
+
+<head>
+    <title> Javascript - Aula 16 </title>
+    <meta charset="utf-8"/>
+
+    <script>
+
+        var mochila = new Array();
+
+        var item1 = [1, "Isqueiro"],
+            item2 = [1, "Faca"],
+            item3 = [1, "Arco"]
+            item4 = [12, "Flecha"];
+
+        mochila.push(item1);
+        mochila.push(item2);
+        mochila.push(item3);
+        mochila.push(item4);
+
+        document.write("Você tem: <br/><br/>");
+        document.write(mochila[0][0] + " " + mochila[0][1] + "<br/>");
+        document.write(mochila[1][0] + " " + mochila[1][1] + "<br/>");
+        document.write(mochila[2][0] + " " + mochila[2][1] + "<br/>");
+        document.write(mochila[3][0] + " " + mochila[3][1] + "<br/>");
+
+        // Declarando matrizes sem "gambiarra"...
+
+        var inventário = [[3, "Maçã Dourada"], [1, "Espada"], [3, "Pedra"], [4, "Corda"]]
+
+        document.write("<br>Você tem: <br/><br/>");
+        document.write(inventário[0][0] + " " + inventário[0][1] + "<br/>");
+        document.write(inventário[1][0] + " " + inventário[1][1] + "<br/>");
+        document.write(inventário[2][0] + " " + inventário[2][1] + "<br/>");
+        document.write(inventário[3][0] + " " + inventário[3][1] + "<br/>");
+    
+    </script>
+</head>
+<body>
+		
+</body>
+</html>

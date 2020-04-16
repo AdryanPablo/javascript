@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="t-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 37</title>
+    <style>
+
+        div#jogador{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            width: 50px;
+            height: 50px;
+
+            background-color: #ccc;
+            border: solid 3px #333;
+            border-radius: 5%;
+        }
+    
+    </style>
+
+    <script>
+
+        window.addEventListener('load', iniciar)
+
+        var direçãoX = 0
+        var direçãoY = 0
+        var posiçãoX = 0
+        var posiçãoY = 0
+        var velocidade = 10
+        var jogador
+        var tempo
+
+        function iniciar () {
+
+            console.log('Página carregada.')
+
+            jogador = document.getElementById('jogador')
+
+            document.addEventListener('keydown', definirDireções)
+            document.addEventListener('keyup', zerarDireções)
+
+            setInterval(moverJogador, 50)
+
+        }
+
+        function moverJogador () {
+
+            posiçãoX += direçãoX * velocidade
+            posiçãoY += direçãoY * velocidade
+
+            jogador.style.left = posiçãoX + 'px'
+            jogador.style.top = posiçãoY + 'px'
+
+        }
+
+        function definirDireções () {
+
+            let tecla = event.keyCode
+
+            if (tecla == 37) {  // Esquerda
+
+                direçãoX = -1
+
+            } else if (tecla == 38) {   // Cima
+
+                direçãoY = -1
+   
+            } else if (tecla == 39) {   // Direita
+
+                direçãoX = 1
+
+            } else if (tecla == 40) {   // Baixo
+
+                direçãoY = 1
+
+            }
+
+        }
+
+        function zerarDireções () {
+
+            let tecla = event.keyCode
+
+            if (tecla == 37 || tecla == 39) {   // Horizontal
+
+                direçãoX = 0
+
+            } else if (tecla == 38 || tecla == 40) {    // Vertical
+
+                direçãoY = 0
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id = 'jogador'></div>    
+</body>
+</html>

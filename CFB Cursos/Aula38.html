@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 38</title>
+
+    <style>
+
+        div#relógio{
+            display: block;
+            margin: auto;
+
+            width: 1000px;
+            height: 250px;
+
+            border: solid 10px #333;
+            border-radius: 25px;
+
+            background-color: #c33;
+            
+            font-size: 200px;
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        function configurarRelógio () {
+
+            let relógio = document.getElementById('relógio')
+            
+            let agora = new Date()
+            let horas = agora.getHours()
+            let minutos = agora.getMinutes()
+            let segundos = agora.getSeconds()
+
+            if (horas < 10) {
+
+                horas = '0' + horas
+
+            }
+            
+            if (minutos < 10) {
+
+                minutos = '0' + minutos
+
+            }
+
+            if (segundos < 10) {
+
+                segundos = '0' + segundos
+
+            }
+
+            let tempo = `${horas} : ${minutos} : ${segundos}`
+
+            relógio.innerHTML = tempo
+
+        }
+
+        setInterval(configurarRelógio)
+    
+    </script>
+</head>
+<body>
+    <div id = 'relógio'></div>
+</body>
+</html>

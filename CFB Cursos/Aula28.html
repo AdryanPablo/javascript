@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 28</title>
+
+    <script>
+
+        var agora = new Date()
+
+        var diasDaSemana = [
+            'Domingo',
+            'Segunda-feira',
+            'Terça-feira',
+            'Quarta-feira',
+            'Quinta-feira',
+            'Sexta-feira',
+            'Sábado'
+        ]
+        var mesesDoAno = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+            'Julho',
+            'Agosto',
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro'
+        ]
+
+        var dia = agora.getDate()
+        var diaDaSemana = agora.getDay()
+        var mês = agora.getMonth()
+        var ano = agora.getFullYear()
+        var hora = agora.getHours()
+        var minutos = agora.getMinutes()
+        //var segundos = agora.getSeconds()
+
+        document.write(`<p>Hoje é ${diasDaSemana[diaDaSemana]}, ${dia} de ${mesesDoAno[mês]} de ${ano}</p>`)
+        document.write(`<p>${hora}:${minutos} horário de Brasília.</p>`)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

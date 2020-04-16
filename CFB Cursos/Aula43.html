@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 43</title>
+    <style>
+
+        body{
+            background-color: #ccc;
+        }
+
+        div#slider{
+            width: 640px;
+            height: 480px;
+
+            position: relative;
+            margin: auto;
+            top: 50px;
+
+            border: solid 1px #333;
+            border-radius: 2%;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+    
+    </style>
+    <script>
+
+        var imagens = []
+        var imagemAtual
+        var númeroDeImagens
+        var slider
+
+        function iniciar () {
+
+            préCarregamento()
+
+            slider = document.getElementById('slider')
+            imagemAtual = 0
+            númeroDeImagens = imagens.length
+
+            console.log(`O slider contém ${númeroDeImagens} imagens.`)
+            
+            mostrarImagens()
+            setInterval(trocarImagens, 3000)
+
+        }
+
+        function préCarregamento () {
+
+            for (let contador = 0; contador < 5; contador ++) {
+
+                imagens[contador] = new Image()
+
+            }
+
+            imagens[0].src = '_imagens/Aula43/Espaço.jpeg'
+            imagens[1].src = '_imagens/Aula43/Floresta.jpeg'
+            imagens[2].src = '_imagens/Aula43/Lago.jpeg'
+            imagens[3].src = '_imagens/Aula43/Lobo.jpeg'
+            imagens[4].src = '_imagens/Aula43/Lua.jpeg'
+
+            console.log('Imagens carregadas.')
+            console.log(imagens)
+
+        }
+
+        function trocarImagens () {
+
+            imagemAtual ++
+
+            if (imagemAtual == númeroDeImagens) {
+
+                imagemAtual = 0
+
+                console.log('Imagem atual resetada.')
+
+            }
+
+            mostrarImagens()
+
+        }
+
+        function mostrarImagens () {
+
+            slider.style.backgroundImage = `url(${imagens[imagemAtual].src})`
+
+        }
+
+        window.addEventListener('load', iniciar)
+    
+    </script>
+</head>
+<body>
+    <div id = 'slider'></div>
+</body>
+</html>

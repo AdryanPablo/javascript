@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 49</title>
+</head>
+<body>
+
+    <script>
+
+        var número = 15
+        var decimal = número.toString()     // Converte para String.
+        var binário = número.toString(2)    // Converte para Binário;
+        var octal = número.toString(8)      // Converte para octal;
+        var hexadecimal = número.toString(16).toUpperCase()     // Converte para hexadecimal.
+
+        document.write(`<p>Tipo de "${número}": ${typeof(decimal)}</p>`)
+        document.write(`<p>=== ${decimal} ===<br>`)
+        document.write(`Binário: ${binário}<br>`)
+        document.write(`Octal: ${octal}<br>`)
+        document.write(`Hexadecimal: ${hexadecimal}</p>`)
+
+        var textoComEspaços = "          CFB Cursos - Curso de Javascript           "
+
+        document.write(`<p>${textoComEspaços}</p>`)
+        window.alert(textoComEspaços.trim())          // Elimina espaços no começo e no final de uma string.
+
+        var textoEspecial = "CFB Cursos \\ \"Curso\" "
+
+        document.write(`<p>${textoEspecial}</p>`)
+
+        var textoEmLinhas = 'Curso de Javascript <br>Aula 49'
+
+        document.write(`${textoEmLinhas}`)
+        window.alert(textoEmLinhas.replace('<br>', '\n'))
+    
+    </script>
+    
+</body>
+</html>

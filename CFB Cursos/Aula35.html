@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 35</title>
+    <style>
+
+        div#cores{
+            background-color: #ccc;
+            width: 120px;
+            height: 120px;
+
+            border: 3px solid #333;
+            border-radius: 10px;
+
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        input#iniciar{
+            width: 55px;
+            height: 20px;
+
+            position: absolute;
+            top: 150px;
+            left: 10px;
+        }
+
+        input#parar{
+            width: 55px;
+            height: 20px;
+
+            position: absolute;
+            top: 150px;
+            left: 75px;
+        }
+    
+    </style>
+    <script>
+
+        window.addEventListener('load', ouvirEventos)
+        
+        var tempo = 0
+
+        function ouvirEventos () {
+
+            var botãoIniciar = document.getElementById('iniciar')
+            var botãoParar = document.getElementById('parar')
+
+            botãoIniciar.addEventListener('click', iniciar)
+            botãoParar.addEventListener('click', parar)
+
+        }
+
+        function iniciar () {
+
+            tempo = setInterval(mudaCor, 1000)
+
+        }
+
+        function parar () {
+
+            clearInterval(tempo)
+
+        }
+
+        function mudaCor() {
+
+            var r = Math.floor(Math.random()*255)
+            var g = Math.floor(Math.random()*255)
+            var b = Math.floor(Math.random()*255)
+
+            document.getElementById('cores').style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+
+        }
+    
+    </script>
+</head>
+<body>
+    <article>
+        <div id = 'cores'></div>
+        <input type = 'button' id = 'iniciar' value = 'Iniciar'>
+        <input type = 'button' id = 'parar' value = 'Parar'>
+    </article>    
+</body>
+</html>

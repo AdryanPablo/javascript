@@ -1,0 +1,90 @@
+<!DOCTYPE "html">
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <title> Javascript - Aula 15 </title>
+    
+    <script type="text/javascript">
+        
+        var itens = [];
+        var escolha1, escolha2, escolha3, escolha4, escolha5;
+
+        itens.push("Corda");
+        itens.push("Canivete");
+        itens.push("Isqueiro");
+        itens.push("Arco");
+
+        alert("Agora você está andando na floresta e encontra dois ítens: " + itens[0] + " e " + itens[1] + ".");
+        alert("Como você não tem bolso, só pode pegar um deles, já que precisa de pelo menos uma mão livre!");
+        escolha1 = prompt("Qual deles você escolhe?");
+
+        if(escolha1 == "Corda"){
+            alert("Agora você continua andando pela floresta...");
+            alert("... então um cara de mata com o canivete que você deixou pra trás.");
+        }
+        else if(escolha1 == "Canivete"){
+            alert("Agora você continua andando pela floresta...")
+            alert("... então um cara te captura com a corda que você deixou pra trás.");
+
+            alert("O que você vai fazer agora!?");
+            alert("Bom... você tem um canivete!");
+
+            escolha2 = prompt("Deseja usar o canivete para cortar a corda? [Sim / Não]");
+
+            if(escolha2 == "Sim"){
+                alert("Boa! Você conseguiu escapar das cordas!");
+
+                escolha3 = prompt("O que você vai fazer agora? 'Fugir' ou 'Matar' o cara?");
+
+                if(escolha3 == "Fugir"){
+                    alert("Corra o mais rápido que puder!");
+                    alert("Droga! Você fez muito barulho!");
+                    alert("Ele te ouviu e saiu correndo até você!");
+                    alert("Agora você está com uma flecha cravada no peito!");
+                }
+                else if(escolha3 == "Matar"){
+                    alert("Escolha difícil! Mas, às vezes, temos que fazer algumas coisas assim para sobreviver!");
+                    alert("Finja que está dormindo! Quando ele chegar, enfie esse canivete bem no coração dele!");
+                    alert("... ZzzZzZZZ ...");
+                    alert("Ele está vindo...");
+                    alert("... se prepare!");
+                    alert("Ele está em cima de você! Mate-o!");
+
+                    escolha4 = prompt("Quer mesmo matá-lo? [Sim / Não]");
+
+                    if(escolha4 == "Sim"){
+                        alert("AAAAAaaaaaaa!");
+                        alert("Ouça!");
+                        alert("O doce grito da morte!");
+
+                        alert("Pronto! Agora você pode continuar a sua aventura na floresta.");
+}
+                    else{
+                        alert("Você é fraco!");
+                        alert("Te falta ódio!");
+                        alert("Ele percebeu...");
+                        alert("... agora é você quem está com um canivete no peito!");
+                    }                    
+                }
+                else{
+                    alert("Você não fez a sua escolha!");
+                    alert("Ele chegou e te viu...");
+                    alert("... então ele te matou!");
+                }
+            }
+            else{
+                alert("Que pena! Você morreu!");
+            }
+
+        }
+        else{
+            alert("Escolha um ítem válido!");
+        }
+
+    </script>
+</head>
+<body>
+		
+</body>
+</html>

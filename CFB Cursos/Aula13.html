@@ -1,0 +1,73 @@
+<!DOCTYPE "html">
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <title> Javascript - Aula 13 </title>
+    
+    <script type="text/javascript">
+    
+        // var cores = new Array();
+
+        var paleta = [];
+        var escolha;
+        var cor;
+
+        paleta.push("Preto");        // O método push adiciona elementos no final do Array.
+        paleta.push("Branco");
+        paleta.push("Vermelho");
+        paleta.push("Verde");
+        paleta.push("Azul");
+
+        escolha = parseInt(prompt("Escolha um número de 1 a 5!"))
+
+        switch (escolha) {
+
+            case 1:
+
+                document.write(paleta[escolha - 1])
+                document.body.style.color = 'white'
+                cor = 'black'
+                break
+            
+            case 2:
+
+                document.write(paleta[escolha - 1])
+                cor = 'white'
+                break
+            
+            case 3:
+
+                document.write(paleta[escolha - 1])
+                cor = 'red'
+                break
+
+            case 4:
+
+                document.write(paleta[escolha - 1])
+                cor = 'green'
+                break
+
+            case 5:
+
+                document.write(paleta[escolha - 1])
+                cor = 'blue'
+                break
+
+            default:
+
+                document.write('Digite uma cor válida!')        
+                break
+
+        }
+
+        document.body.style.background = cor        // So funciona se o body tiver algum conteúdo.
+		
+    </script>
+    
+</head>
+
+<body>	
+</body>
+
+</html>

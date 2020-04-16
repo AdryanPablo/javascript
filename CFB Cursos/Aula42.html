@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 42</title>
+    <style>
+
+        table {
+            border-collapse: collapse;
+            border: solid 3px #333;
+
+            font-family: Chilanka;
+            text-align: center;
+        }
+
+        th {            
+            background-color: #33c;
+
+            font-size: 20pt;
+            color: #fff;
+        }
+
+        th, tr, td {
+            width: 200px;
+            height: 40px;
+            border: solid 1px #888;
+        }
+
+        input {
+            font: 16pt Chilanka;
+        }
+
+        .nomes {
+            text-align: left;
+            width: 200px;
+            height: 40px;
+            border: none;
+        }
+
+        .nota1, .nota2 {
+            width: 200px;
+            height: 40px;
+            border: none;
+
+            text-align: center;
+        }
+
+        .total {
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            font: 16pt Chilanka;
+        }
+
+        #analisar, #addLinha {
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+
+            background-color: #33c;
+            border: solid 1px #333;
+            border-radius: 10%;
+
+            font: 16pt Chilanka;            
+            color: #fff;
+        }
+
+        #addLinha {
+            width: 200px;
+            background-color: #c33;
+        }
+
+        p{
+            font: 12pt Chilanka;
+            margin: 0px;
+            margin-top: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <table id = 'tabelaDeNotas'>
+        <th>Nomes</th><th>1ª Nota</th><th>2ª Nota</th><th>Total</th>
+        <tr>
+            <td><input type = 'text' class = 'nomes'></td>
+            <td><input type = 'number' class = 'nota1'></td>
+            <td><input type = 'number' class = 'nota2'></td>
+            <td class = 'total'></td>
+        </tr>
+        <tr>
+            <td><input type = 'text' class = 'nomes'></td>
+            <td><input type = 'number' class = 'nota1'></td>
+            <td><input type = 'number' class = 'nota2'></td>
+            <td class = 'total'></td>
+        </tr>
+
+
+    </table>
+
+    <input type = 'button' value = 'Adicionar Linha' id = 'addLinha' onclick = 'addLinha()'>
+    <p>Obs.: Adicione linhas antes de digitar os dados.</p>
+    <input type = 'submit' value = 'Analisar' id = 'analisar' onclick = 'analisar()'>    
+
+    <script>
+
+        var alunos = []
+        var nomes = []
+        var notas1 = []
+        var notas2 = []
+        var totais = []
+        var tabela = document.getElementById('tabelaDeNotas')
+
+        function analisar () {
+
+            nomes = document.getElementsByClassName('nomes')
+            notas1 = document.getElementsByClassName('nota1')
+            notas2 = document.getElementsByClassName('nota2')
+            totais = document.getElementsByClassName('total')
+            
+            alunos = [nomes, notas1, notas2, totais]
+
+            for (let índice = 0; índice < nomes.length; índice ++) {
+
+                let nota1 = parseInt(notas1[índice].value)
+                let nota2 = parseInt(notas2[índice].value)
+
+                totais[índice].innerHTML = nota1 + nota2
+
+            }
+
+            for (let índice = 0; índice < totais.length; índice ++) {
+
+                if (totais[índice].innerHTML < 70) {
+
+                    totais[índice].style.backgroundColor = '#c33'
+
+                } else {
+
+                    totais[índice].style.backgroundColor = '#3c3'
+
+                }
+                
+            }
+
+        }
+
+        function addLinha () {
+
+            tabela.innerHTML += "<tr><td><input type = 'text' class = 'nomes'></td><td><input type = 'number' class = 'nota1'></td><td><input type = 'number' class = 'nota2'></td><td class = 'total'></td></tr>"
+
+        }
+    
+    </script>
+    
+</body>
+</html>

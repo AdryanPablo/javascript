@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 26</title>
+</head>
+<body>
+    <h1>HTML</h1>
+
+    <h3 id = 'subTítulo'>Curso de Javascript</h3>
+
+    <div>
+        <p>Aula 26</p>
+        <p>CFB Cursos</p>
+    </div>
+
+    <h1>Javascript</h1>
+
+    <script>
+
+        var títulos = document.querySelectorAll('h1')               // Retorna um vetor
+        var parágrafosDaDiv = document.querySelectorAll('div > p')  // "" um vetor
+        var subTítulo = document.querySelector('h3#subTítulo')      // "" um único elemento
+        var caixa = document.getElementsByTagName('div')            // "" um vetor de índice único (porque existe apenas uma div)
+        var linhas = document.getElementsByTagName('hr')
+
+        document.write(`Quantidade de linhas hr no início: ${linhas.length} <br>`)
+
+        for (let índice = 0; índice < títulos.length; índice ++) {
+
+            títulos[índice].innerHTML += '<hr/>'
+            títulos[índice].style.fontSize = '30pt'
+            títulos[índice].style.color = '#222'
+
+        }
+
+        for (let índice = 0; índice < parágrafosDaDiv.length; índice ++) {
+
+            parágrafosDaDiv[índice].style.color = '#3c3'
+
+        }
+
+        subTítulo.style.color = '#333'
+        subTítulo.style.fontSize = '20pt'
+
+        caixa = caixa[0]
+        
+        caixa.style.border = '#333 solid 3px'
+        caixa.style.width = '200px'
+        caixa.style.textAlign = 'center'
+        caixa.style.borderRadius = '10px'
+
+        for (let índice = 0; índice < linhas. length; índice ++) {
+
+            linhas[índice].style.width = '400px'
+            linhas[índice].style.position = 'absolute'
+            linhas[índice].style.left
+
+        }
+
+        document.write(`<p style = 'color: #3cc'>Quantidade de linhas hr no final: ${linhas.length}</p>`)
+    
+    </script>
+    
+</body>
+</html>

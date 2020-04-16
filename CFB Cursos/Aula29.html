@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 29</title>
+    <script>
+
+        var sorteioDaMegaSena = []
+        
+        contador = sorteioDaMegaSena.length
+        while (contador < 6) {
+
+            let númeroAleatório = Math.floor(Math.random() * 60 + 1)
+            
+            if (sorteioDaMegaSena.indexOf(númeroAleatório) == -1) {
+
+                sorteioDaMegaSena[contador] = númeroAleatório
+                contador ++
+
+            }
+
+        }
+
+        for (let números = 0; números < 6; números ++) {
+
+            document.write(sorteioDaMegaSena[números] + '<br>')
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

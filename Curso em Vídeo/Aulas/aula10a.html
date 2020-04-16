@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Aula 10 a </title>
+
+    <style>
+
+        body{
+            width: 800px;
+            height: 600px;
+            background-color: #cccccc;
+            font: Arial #333333 20pt;
+        }
+        div#área{
+            background-color: #888888;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 85px;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- <div id = "área" onmouseenter = "entrar()" onclick = "clicar()" onmouseout = "sair()"> Interaja... </div> -->
+
+    <div id = "área"> Interaja... </div>
+    
+    <script>
+
+        var a = window.document.getElementById('área')
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseout', sair)
+
+        function entrar(){
+            a.innerText = 'Entrou!'
+        }
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.backgroundColor = '#ee3333';
+        }
+        function sair(){
+            a.innerText = 'Saiu!'
+            a.style.backgroundColor = '#888888';
+        }
+        
+    </script>
+</body>
+</html>

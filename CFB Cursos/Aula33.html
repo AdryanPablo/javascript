@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ot-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 33</title>
+    <style>
+
+        div#caixa{
+            background-color: #c33;
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 180px;
+            height: 90px;
+
+            padding: 10px;
+            border-radius: 0px 5px 0px 5px;
+
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+        }
+    
+    </style>
+    <script>
+
+        window.addEventListener('load', ouvirEventos)   // Carrega as escutas após carregar a página.
+        
+        function ouvirEventos () {
+
+            var caixa = document.getElementById('caixa')
+
+            caixa.addEventListener('mouseover', function(event){
+                aumentaTamanho()
+                criaSombra()
+            })
+            caixa.addEventListener('mouseout', function(event){
+                diminuiTamanho()
+                trocaCor('#c33')
+                removeSombra()
+            })
+            caixa.addEventListener('click',function(event){
+                trocaCor('#3c3')
+            })
+
+        }
+
+        function trocaCor (cor) {
+
+            caixa.style.background = cor
+
+        }
+
+        function aumentaTamanho () {
+
+            caixa.style.width = '200px'
+            caixa.style.height = '100px'
+
+        }
+
+        function diminuiTamanho () {
+
+            caixa.style.width = '180px'
+            caixa.style.height = '90px'
+        }
+
+        function criaSombra () {
+
+            caixa.style.boxShadow = '10px 10px #333'
+
+        }
+
+        function removeSombra () {
+
+            caixa.style.boxShadow = 'none'
+
+        }
+
+    </script>
+    
+</head>
+<body >
+    <div id = 'caixa'>
+        Curso de Javascript
+    </div>
+</body>
+</html>

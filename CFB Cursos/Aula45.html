@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 45</title>
+    <style>
+
+        body{
+            background-color: #ccc;
+        }
+
+        input{
+            width: 150px;
+            height: 30px;
+
+            margin: 10px;
+
+            font-family: Chilanka;
+            font-size: 12pt;
+            color:#333
+        }
+
+        p{
+            font-family: Chilanka;
+            color: #333;
+        }
+
+        .pequeno{
+            font-size: 18pt;
+        }
+
+        .médio{
+            font-size: 24pt;
+        }
+
+        .grande{
+            font-size: 30pt;
+        }
+    
+    </style>
+    <script>
+
+        var parágrafo01
+        var parágrafo02
+        var parágrafo03
+
+        function inicializarVariáveis () {
+
+            parágrafo01 = document.getElementById('parágrafo01')
+            parágrafo02 = document.getElementById('parágrafo02')
+            parágrafo03 = document.getElementById('parágrafo03')
+
+        }
+
+        function criarAtributos () {
+
+            parágrafo01.setAttribute('class', 'grande')
+            parágrafo02.setAttribute('class', 'médio')
+            parágrafo03.setAttribute('class', 'pequeno')
+
+        }
+
+        function removerAtributos () {
+
+            parágrafo01.removeAttribute('class')
+            parágrafo02.removeAttribute('class')
+            parágrafo03.removeAttribute('class')
+
+        }
+
+        function verificadorDeAtributos () {
+
+            if (parágrafo01.hasAttribute('class') || parágrafo02.hasAttribute('class') || parágrafo03.hasAttribute('class')) {
+
+                alert('Parágrafos formatados!')
+
+            } else {
+
+                alert('Texto sem formatação.')
+
+            }
+
+        }
+
+        window.addEventListener('load', inicializarVariáveis)
+
+    </script>
+</head>
+<body>
+    <p id = 'parágrafo01'>Curso de Javascript</p>
+    <p id = 'parágrafo02'>Aula 45</p>
+    <p id = 'parágrafo03'>CFB Cursos</p>
+
+    <input type = 'button' onclick = 'criarAtributos()' value = 'Criar Atributos'><br>
+    <input type = 'button' onclick = 'removerAtributos()' value = 'Remover Atributos'><br>
+    <input type = 'button' onclick = 'verificadorDeAtributos()' value = 'Verificar Atributos'>
+</body>
+</html>

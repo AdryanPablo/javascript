@@ -1,0 +1,59 @@
+<!DOCTYPE "html">
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <title> Javascript - Aula 14 </title>
+    
+    <script type="text/javascript">
+
+        var cores = [];
+        var gosto;
+
+        cores.push("Branco");       // O método push insere elementos no final do Array
+        cores.push("Vermelho");
+        cores.push("Verde");
+        cores.push("Azul");
+        cores.unshift("Preto");     // Já o método unshift insere elementos no começo.
+
+        alert(cores[0] + ", " + cores[1] + ", " + cores[2] + ", " + cores[3] + " e " + cores[4] + ".");
+
+        gosto = prompt("Qual dessas cores você não gosta?")
+
+        if(gosto == "Preto"){
+            gosto = 0;
+        }
+        else if(gosto == "Branco"){
+            gosto = 1;
+        }
+        else if(gosto == "Vermelho"){
+            gosto = 2;
+        }
+        else if(gosto == "Verde"){
+            gosto = 3;
+        }
+        else if(gosto == "Azul"){
+            gosto = 4;
+        }
+        else{
+            alert("Digite uma cor válida!");
+        }
+
+        cores.splice(gosto, 1);     // O método splice remove elementos em qualquer posição do Array.
+
+        alert("As cores restantes são: " + cores[0] + ", " + cores[1] + ", "+ cores[2] + ", " + cores[3] + ".");
+
+        alert("Não gosto dos números um (1) e quatro (4), então vou remover a primeira e a última cores!");
+
+        cores.shift();      // Remove elementos no começo do Array
+        cores.pop();        // Remove elementos no final
+
+        alert("As cores restantes são: " + cores[0] + " e " + cores[1] + ".")
+
+    </script>
+    
+</head>
+<body>
+		
+</body>
+</html>

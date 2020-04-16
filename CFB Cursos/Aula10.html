@@ -1,0 +1,46 @@
+<doctype html>
+<html>
+
+<head>
+    <title> CFB Cursos - Curso de Javascript | Aula 10 </title>
+    <meta charset="utf-8"/>
+
+    <script>
+    
+        var nota, status;
+
+        nota = prompt("Qual a nota?")
+
+        if(nota >= 60){
+            status = "Aprovado";
+
+            if(nota == 100){
+                status += " com excelência";
+            }
+            else if (nota >= 90){
+                status += " com louvor";
+            }
+        }
+        else if(nota >= 40){
+            status = "Recuperação"
+        }
+        else{
+            status = "Reprovado"
+
+            if(nota == 0){
+                status += " com demência";
+            }
+            else if(nota < 20){
+                status += " com louvor";
+            }
+        }
+
+        document.write(status, "!");
+    
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

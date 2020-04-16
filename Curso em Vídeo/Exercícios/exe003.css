@@ -1,0 +1,26 @@
+body{
+    background: #cccccc;
+    font: Arial 20pt; 
+    color: #333333;
+}
+
+header{
+    text-align: center;
+}
+h1{
+    font-size: 30pt;
+}
+
+section{
+    background: #eeeeee;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #333333;
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+footer{
+    text-align: center;
+    font-style: italic;
+}

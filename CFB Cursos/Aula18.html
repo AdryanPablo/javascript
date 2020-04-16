@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 18</title>
+
+    <script>
+
+        //var contagem = parseInt(window.prompt("Contagem Progressiva [1] / Contagem Regressiva [2]: "))
+        var início = parseInt(window.prompt("Qual o valor de início? "))
+        var final = parseInt(window.prompt("Qual o valor do final? "))
+
+        if (início < final) {
+
+            document.write("Contagem Progressiva. <br><br>")
+
+            for (var cont = início; cont <= final; cont ++) {
+
+                document.write(cont + "<br>")
+
+            }
+
+        }
+        else {
+
+            document.write("Contagem Regressiva. <br><br>")
+
+            for (var cont = início; cont >= final; cont --) {
+
+                document.write(cont + "<br>")
+
+            }
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

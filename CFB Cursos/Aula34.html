@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascripit - Aula 34</title>
+    <style>
+
+        div#jogador{
+            background-color: #ccc;
+            border: 2px solid #333;
+            border-radius: 5%;
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+            width: 180px;
+            height: 180px;
+
+            padding: 10px;
+
+            font-size: 20pt;
+            text-align: center;
+            color: #333;
+        }
+    
+    </style>
+    <script>
+
+        var eixoX = 0
+        var eixoY = 0
+
+        window.addEventListener('load', ouvirEventos)
+
+        function ouvirEventos () {
+
+            var jogador = document.getElementById('jogador')
+            jogador.addEventListener('click', selecionarJogador)
+
+        }
+
+        function selecionarJogador () {
+
+            console.log('Jogador selecionado.')
+
+            jogador.style.backgroundColor = '#c33'
+
+            document.addEventListener('keydown', moverJogador)
+
+        }
+
+        function moverJogador () {
+
+            var tecla = event.keyCode
+
+            if (tecla == 37){   // Esquerda
+
+                eixoX -= 10
+                jogador.style.left = eixoX + 'px'
+
+            } else if (tecla == 38) {   // Cima
+
+                eixoY -= 10
+                jogador.style.top = eixoY + 'px'
+
+            } else if (tecla == 39) {   // Direita
+
+                eixoX += 10
+                jogador.style.left = eixoX + 'px'
+
+            } else if (tecla == 40) {   // Baixo
+
+                eixoY += 10
+                jogador.style.top = eixoY + 'px'
+
+            } else if (tecla == 27) {
+
+                console.log('Parando movimentação.')
+                jogador.style.backgroundColor = '#ccc'
+                document.removeEventListener('keydown', moverJogador)
+
+            }
+
+        }
+    
+    </script>
+</head>
+<body>
+    <div id = 'jogador'></div>
+</body>
+</html>

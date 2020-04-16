@@ -1,0 +1,50 @@
+<!DOCTYPE "html">
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <title> Javascript - Aula 12 </title>
+    
+    <script type="text/javascript">
+    
+        var mensagem = "";
+        var status = 0;
+        var pontos = prompt("Quantos pontos você fez? ");
+
+        alert(pontos + " pontos!")
+
+        if(pontos >= 1000){
+            status = 1;
+            alert(status + "ª posição!");
+        }
+        else if(pontos < 1000 && pontos >= 800){
+            status = 2;
+            alert(status + "ª posição!");
+        }
+        else if(pontos < 800 && pontos >= 600){
+            status = 3;
+            alert(status + "ª posição!");
+        }
+
+        switch(parseInt(status)){
+            case 1:
+                mensagem = "Parabéns! Você granhou medalha de Ouro!";
+                break;
+            case 2:
+                mensagem = "Parabéns! Você ganhou medalha de Prata!";
+                break;
+            case 3:
+                mensagem = "Parabéns! Você ganhou medalha de Bronze!";
+                break;
+            default:
+                mensagem = "Que pena! Você não ganhou medalha!";
+        }
+
+        document.write(mensagem);
+
+    </script>
+</head>
+<body>
+		
+</body>
+</html>

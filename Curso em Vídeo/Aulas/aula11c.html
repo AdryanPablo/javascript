@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Aula 11 c </title>
+
+    <style>
+        body{
+            background-color: #cccccc;
+            font-family:  Ubuntu;
+            font-size: 20pt;
+            color: #333333;
+        }
+        h1{
+            font-weight: bold;
+            font-size: 30pt;
+        }
+        input#vel{
+            width: 100px;
+            height: 20px;
+            margin: 2px;
+            padding: 2px;
+
+            font-family: Ubuntu;
+            font-size: 20pt;
+            color: #333333;            
+        }
+        input#botão{
+            font-family: Ubuntu;
+            font-size: 18pt;
+            color: #333333;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1> Sistema de Multas </h1>
+    Velocidade do veículo: <input type="number" name="vel" id="vel"> km/h
+    <input type="button" value="Verificar" id="botão" onclick="verificar()">
+    <div id="resultado"></div>
+
+    <script>
+
+        function verificar(){
+            vel = Number(window.document.querySelector('input#vel').value)
+            res = window.document.querySelector('div#resultado')
+
+            res.innerHTML = `<p>A velocidade é de <strong>${vel}km/h</strong>.</p>`
+
+            if(vel > 60){
+                res.innerHTML += `<p>Ultrapassou o limite de velocidade! MULTADO!</p>`
+            }            
+
+            res.innerHTML += `<p>Dirija sempre com cuidado! Use cinto de segurança!</p>`
+        }
+        
+    </script>
+    
+</body>
+</html>

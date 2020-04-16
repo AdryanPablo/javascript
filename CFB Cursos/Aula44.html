@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 44</title>
+    <style>
+
+        body{
+            background-color: #ccc;
+        }
+
+        div#slider{
+            width: 640px;
+            height: 480px;
+
+            position: relative;
+            margin: auto;
+            top: 50px;
+
+            border-radius: 2%;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .botõesDoSlider{
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+
+            height: 150px;
+            width: 30px;
+            margin: 10px;
+
+            cursor: pointer;
+
+            border: none;
+            outline: none;
+        }
+
+        #bordasDaBarra{
+            width: 100%;
+            height: 10px;
+
+            position: relative;
+            margin: auto;
+            top: 270px;      
+
+            border: solid 1px #333;
+            border-radius: 5px;
+        }
+
+        #barraDeCarregamento{
+            width: 0%;
+            height: 100%;
+
+            border-radius: 5px;
+
+            background-color: #c33;
+        }
+    
+    </style>
+    <script>
+
+        var imagens = []
+        var imagemAtual
+        var númeroDeImagens
+        var slider
+        var barraDeCarregamento
+        var tempoDeTroca
+        var tempoDaBarra
+
+        function iniciar () {
+
+            préCarregamento()
+
+            slider = document.getElementById('slider')
+            barraDeCarregamento = document.getElementById('barraDeCarregamento')
+            imagemAtual = 0
+            tempoDeTroca = 0
+            númeroDeImagens = imagens.length
+
+            console.log(`O slider contém ${númeroDeImagens} imagens.`)
+            
+            mostrarImagens()
+            animarSlider()
+
+        }
+
+        function préCarregamento () {
+
+            for (let contador = 0; contador < 5; contador ++) {
+
+                imagens[contador] = new Image()
+
+            }
+
+            imagens[0].src = '_imagens/Aula44/Espaço.jpeg'
+            imagens[1].src = '_imagens/Aula44/Floresta.jpeg'
+            imagens[2].src = '_imagens/Aula44/Lago.jpeg'
+            imagens[3].src = '_imagens/Aula44/Lobo.jpeg'
+            imagens[4].src = '_imagens/Aula44/Lua.jpeg'
+
+            console.log('Imagens carregadas.')
+            console.log(imagens)
+
+        }
+
+        function trocarImagens (direção) {
+            
+            tempoDeTroca = 0
+            imagemAtual += direção
+
+            if (imagemAtual == númeroDeImagens) {
+
+                imagemAtual = 0
+
+                console.log('Imagem atual resetada.')
+
+            } else if (imagemAtual < 0) {
+
+                imagemAtual = númeroDeImagens - 1
+
+            }
+
+            mostrarImagens()
+
+        }
+
+        function mostrarImagens () {
+
+            slider.style.backgroundImage = `url(${imagens[imagemAtual].src})`
+
+        }
+
+        function animarSlider () {
+
+            tempoDeTroca ++
+
+            if (tempoDeTroca > 300) {
+
+                tempoDeTroca = 0
+
+                trocarImagens(1)
+
+            }
+
+            tempoDaBarra = tempoDeTroca / 3
+
+            barraDeCarregamento.style.width = `${tempoDaBarra}%`
+
+            window.requestAnimationFrame(animarSlider)
+
+        }
+
+        window.addEventListener('load', iniciar)
+    
+    </script>
+</head>
+<body>
+    <div id = 'slider'>
+        <button class = 'botõesDoSlider' onclick = 'trocarImagens(-1)'><</button>
+        <div id = 'bordasDaBarra'>
+            <div id = 'barraDeCarregamento'></div>
+        </div>    
+        <button class = 'botõesDoSlider' onclick = 'trocarImagens(1)'>></button>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - Aula 40</title>
+
+    <style>
+
+        #tela{
+            position: relative;
+            margin: auto;
+            top: 100px;
+
+            width: 800px;
+            height: 100px;
+
+            background-color: #ccc;
+            border: solid 5px #333;
+            border-radius: 1%;
+        }
+
+        #jogador{
+            position: relative;
+            top: 0px;
+            left: 0px;
+
+            margin: 0px;
+
+            width: 100px;
+            height: 100px;
+
+            background-color: #888;
+            border-radius: 5%;
+        }
+    
+    </style>
+    <script>
+
+        window.addEventListener('load', iniciarJogo)
+
+        var jogador
+        var direçãoX
+        var eixoX
+        var evento
+        var estado          // Movimentando ou Parado
+        var botãoIniciar
+        var botãoParar
+
+        function iniciarJogo () {
+
+            jogador = document.getElementById('jogador')
+            eixoX = 0
+            estado = false
+
+            botãoIniciar = document.getElementById('botãoIniciar')
+            botãoParar = document.getElementById('botãoParar')
+
+            botãoIniciar.addEventListener('click', function(event){
+                if (!estado) {
+                    moverJogador()
+                }
+            })
+            botãoParar.addEventListener('click', function(event){
+                pararJogador()
+            })
+
+            jogador.addEventListener('click', escolherAção)
+
+        }
+
+        function escolherAção () {
+
+            if (estado) {
+
+                pararJogador()
+
+            } else {
+
+                moverJogador()
+
+            }
+
+        }
+
+        function moverJogador () {
+
+            estado = true
+            jogador.style.backgroundColor = '#c33'
+
+            if (eixoX <= 0 ) {
+
+                direçãoX = 5
+
+            } else if (eixoX >= 700) {
+
+                direçãoX = -5
+
+            }
+
+            eixoX += direçãoX
+            jogador.style.left = eixoX + 'px'
+
+            evento = requestAnimationFrame(moverJogador)
+
+        }
+
+        function pararJogador () {
+
+            estado = false
+            jogador.style.backgroundColor = '#888'
+
+            cancelAnimationFrame(evento)
+
+        }
+    
+    </script>
+</head>
+
+<body>
+    <article>
+        <input type = 'button' id = 'botãoIniciar' value = 'Iniciar'>
+        <input type = 'button' id = 'botãoParar' value = 'Parar'>
+        <div id = 'tela'>            
+            <p id = 'jogador'></p>
+        </div>
+    </article>  
+</body>
+</html>
