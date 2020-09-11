@@ -1,26 +1,63 @@
-var botoes = [
-    document.getElementById('botao0'),
+const botoes = [
+    document.querySelector('div#botoes'),
     document.getElementById('botao1'),
     document.getElementById('botao2'),
     document.getElementById('botao3'),
     document.getElementById('botao4'),
+    document.getElementById('botao5')
 ]
 
-botoes[0].addEventListener('click', criarHTML0)
-botoes[1].addEventListener('click', criarHTML1)
-botoes[2].addEventListener('click', criarHTML2)
-botoes[3].addEventListener('click', criarHTML3)
-botoes[4].addEventListener('click', criarHTML4)
+const desafios = document.querySelector('div#desafios')
 
-var desafios = document.getElementById('desafios')
+botoes[1].onclick = function criarDesafio1() {
 
-function criarHTML0() {
+    let botoes = {
+        mostrar: '',
+        limpar: '',
 
-    desafios.innerHTML = ('<button class="botao" onclick="mostrarEndereço()">Mostrar Endereço</button>')
+        criarBotao() {
+
+            document.createElement('button')
+
+        },
+
+        darClasse(botao) {
+
+            botao.className = 'botao'
+
+        },
+
+        atribuirFuncao(botao, funcao) {
+
+            botao.setAttribute('onclick', `${funcao}`)
+
+        }
+    }
+
+    let textos = {
+        mostrar: document.createTextNode('Mostrar Endereço'),
+        limpar: document.createTextNode('Limpar Endereço')
+    }
+
+    
+
+    botoes.darClasse(botoes.mostrar)
+    botoes.darClasse(botoes.limpar)
+
+
+    botoes.mostrar.setAttribute('onclick', 'mostrarEndereco()')
+    botoes.mostrar.appendChild(textos.mostrar)
+
+    botoes.limpar.className = 'botao'
+    botoes.limpar.setAttribute('onclick', 'limparEndereco()')
+    botoes.limpar.appendChild(textos.limpar)
+
+    desafios.appendChild(botoes.mostrar)
+    desafios.appendChild(botoes.limpar)
 
 }
 
-function criarHTML1() {
+botoes[2].onclick = function criarDesafio2() {
 
     desafios.innerHTML = (`
         <label for="inicio" class="descricao">Início: </label>
@@ -32,7 +69,7 @@ function criarHTML1() {
 
 }
 
-function criarHTML2() {
+botoes[3].onclick = function criarDesafio3() {
 
     desafios.innerHTML = (`
         <label for="habilidade1">1ª Habilidade: </label>
@@ -46,7 +83,7 @@ function criarHTML2() {
 
 }
 
-function criarHTML3() {
+botoes[4].onclick = function criarDesafio4() {
 
     desafios.innerHTML = (`
         <label for="anosDeEstudos">Anos de Estudos: </label>
@@ -56,7 +93,7 @@ function criarHTML3() {
 
 }
 
-function criarHTML4() {
+botoes[5].onclick = function criarDesafio5() {
 
     desafios.innerHTML = (`<button class="botao" onclick="lerHabilidades()">Habilidades dos Usuários</button>`)
 
