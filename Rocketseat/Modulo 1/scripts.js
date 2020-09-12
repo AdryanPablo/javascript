@@ -12,26 +12,8 @@ const desafios = document.querySelector('div#desafios')
 botoes[1].onclick = function criarDesafio1() {
 
     let botoes = {
-        mostrar: '',
-        limpar: '',
-
-        criarBotao() {
-
-            document.createElement('button')
-
-        },
-
-        darClasse(botao) {
-
-            botao.className = 'botao'
-
-        },
-
-        atribuirFuncao(botao, funcao) {
-
-            botao.setAttribute('onclick', `${funcao}`)
-
-        }
+        mostrar: document.createElement('button'),
+        limpar: document.createElement('button')
     }
 
     let textos = {
@@ -39,33 +21,60 @@ botoes[1].onclick = function criarDesafio1() {
         limpar: document.createTextNode('Limpar Endereço')
     }
 
+    darClasse(botoes.mostrar, 'botao')
+    darClasse(botoes.limpar, 'botao')
     
+    atribuirFuncao(botoes.mostrar, 'mostrarEndereco()')
+    atribuirFuncao(botoes.limpar, 'limparEndereco()')
 
-    botoes.darClasse(botoes.mostrar)
-    botoes.darClasse(botoes.limpar)
+    atribuirTexto(botoes.mostrar, textos.mostrar)
+    atribuirTexto(botoes.limpar, textos.limpar)
 
-
-    botoes.mostrar.setAttribute('onclick', 'mostrarEndereco()')
-    botoes.mostrar.appendChild(textos.mostrar)
-
-    botoes.limpar.className = 'botao'
-    botoes.limpar.setAttribute('onclick', 'limparEndereco()')
-    botoes.limpar.appendChild(textos.limpar)
-
-    desafios.appendChild(botoes.mostrar)
-    desafios.appendChild(botoes.limpar)
+    atribuirElemento(botoes.mostrar)
+    atribuirElemento(botoes.limpar)
 
 }
 
 botoes[2].onclick = function criarDesafio2() {
 
-    desafios.innerHTML = (`
-        <label for="inicio" class="descricao">Início: </label>
-        <input type="number" class="caixa" id="inicio">
-        <label for="fim" class="descricao">Fim: </label>
-        <input type="number" class="caixa" id="fim">
-        <button class="botao" onclick="pares()">Números Pares</button>
-    `)
+    let labels = {
+        inicio: document.createElement('label'),
+        fim: document.createElement('label')
+    }
+
+    let inputs = {
+        inicio: document.createElement('input'),
+        fim: document.createElement('input')
+    }
+
+    let botao = document.createElement('button')
+
+    let textos = {
+        inicio: document.createTextNode('Início: '),
+        fim: document.createTextNode('Fim: '),
+        numeros: document.createTextNode('Números Pares')
+    }
+
+    darClasse(labels.inicio, 'descricao')
+    darClasse(labels.fim, 'descricao')
+    darClasse(inputs.inicio, 'caixa')
+    darClasse(inputs.fim, 'caixa')
+    darClasse(botao, 'botao')
+
+    darId(inputs.inicio, 'inicio')
+    darId(inputs.fim, 'fim')
+
+    atribuirFuncao(botao, 'pares()')
+
+    atribuirTexto(labels.inicio, textos.inicio)
+    atribuirTexto(labels.fim, textos.fim)
+    atribuirTexto(botao, textos.numeros)
+
+    atribuirElemento(labels.inicio)
+    atribuirElemento(inputs.inicio)
+    atribuirElemento(labels.fim)
+    atribuirElemento(inputs.fim)
+    atribuirElemento(botao)
 
 }
 
@@ -96,5 +105,35 @@ botoes[4].onclick = function criarDesafio4() {
 botoes[5].onclick = function criarDesafio5() {
 
     desafios.innerHTML = (`<button class="botao" onclick="lerHabilidades()">Habilidades dos Usuários</button>`)
+
+}
+
+function darClasse(elemento, classe) {
+
+    elemento.className = classe
+
+}
+
+function darId(elemento, id) {
+
+    elemento.id = id
+
+}
+
+function atribuirFuncao(botao, funcao) {
+
+    botao.setAttribute('onclick', `${funcao}`)
+
+}
+
+function atribuirTexto(elemento, texto) {
+
+    elemento.appendChild(texto)
+
+}
+
+function atribuirElemento(elemento) {
+
+    desafios.appendChild(elemento)
 
 }
