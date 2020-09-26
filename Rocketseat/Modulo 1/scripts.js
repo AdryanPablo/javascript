@@ -80,6 +80,14 @@ botoes[2].onclick = function criarDesafio2() {
 
 botoes[3].onclick = function criarDesafio3() {
 
+    let labels = []
+
+    let inputs = []
+
+    let botao
+
+    let textos = []
+
     desafios.innerHTML = (`
         <label for="habilidade1">1ª Habilidade: </label>
         <input type="text" class="caixa" id="habilidade1">
