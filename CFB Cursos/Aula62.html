@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 62</title>
+
+    <script>
+
+        var janela
+
+        function abrirJanela() {
+
+            janela = window.open('./Aula49.html')
+
+        }
+
+        function fecharJanela() {
+
+            janela.close()
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <button onclick="abrirJanela()">Abrir Janela</button>
+    <button onclick="fecharJanela()">Fechar Janela</button>
+    
+</body>
+</html>
