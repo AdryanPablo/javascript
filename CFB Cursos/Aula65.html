@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 65</title>
+
+    <script>
+
+        var conteudo
+
+        window.addEventListener('load', () => {
+
+            conteudo = document.getElementById('conteudo')
+
+            conteudo.innerHTML = `Nome do Navegador: ${navigator.appName}<br>`
+            conteudo.innerHTML += `Versão do Navegador: ${navigator.appVersion}<br>`
+            conteudo.innerHTML += `Cookies Habilitados: ${navigator.cookieEnabled ? 'Sim' : 'Não'}<br>`
+            conteudo.innerHTML += `Idioma: ${navigator.language}<br>`
+            conteudo.innerHTML += `Online: ${navigator.onLine ? 'Online' : 'Offline'}<br>`
+            conteudo.innerHTML += `S.O.: ${navigator.platform}<br>`
+            navigator.geolocation.getCurrentPosition((coordenadas) => {
+                let latitude = coordenadas.coords.latitude
+                let longitude = coordenadas.coords.longitude
+
+                conteudo.innerHTML += `Latitude: ${latitude}<br>`
+                conteudo.innerHTML += `Longitue ${longitude}<br>`
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+    <main id="conteudo"></main>
+    
+</body>
+</html>
