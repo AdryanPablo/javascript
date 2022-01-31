@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 71</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-image: url('./_imagens/Aula70/terminal.jpg');
+            background-position: right center;
+            background-size: cover;
+        }
+
+        h1 {
+            margin: 1%;
+            text-align: center;
+            font-size: 2em;
+            color: #0f0;
+        }
+
+        #configuracoes {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+
+        #preferencia {
+            width: 5em;
+        }
+
+        #verde {
+            color: #0f0;
+        }
+
+        #branco {
+            color: white;
+        }
+
+        #terminal {
+            width: 80vw;
+            height: 80vh;
+            padding: 1%;
+            background-color: black;
+            margin: auto;
+            border: solid 0.2em white;
+            border-radius: 0.5em;
+            font-size: 1.1em;
+            color: black;
+        }
+
+    </style>
+    <script>
+
+        var terminal
+        var conteudoTerminal       
+        var preferencia
+
+        window.addEventListener('load', () => {
+
+            terminal = document.getElementById('terminal')
+            conteudoTerminal = document.querySelector('#terminal p')
+            preferencia = document.getElementById('preferencia')
+
+            carregarPreferencia()
+
+            preferencia.addEventListener('click', configurarPreferencia)
+
+        })
+
+        function carregarPreferencia() {
+
+            if (localStorage.cor == 1) {
+
+                preferencia.value = 1
+                cor = '#0f0'
+                mudarCor(cor)
+
+            } else if (localStorage.cor == 2){
+
+                preferencia.value = 2
+                cor = '#fff'
+                mudarCor(cor)
+
+            }
+        }
+
+        function configurarPreferencia() {
+
+            localStorage.cor = preferencia.value
+            carregarPreferencia()
+
+        }
+
+        function mudarCor(cor) {
+
+            terminal.style.color = cor
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <h1>Terminal</h1>
+
+    <div id="configuracoes">
+        <span id="verde">Verde</span>
+        <input type="range" id="preferencia" min="1" max="2" value="1">
+        <span id="branco">Branco</span>
+    </div>
+
+    <div id="terminal">
+
+        <p>Hello, world!</p>
+
+    </div>
+    
+</body>
+</html>
