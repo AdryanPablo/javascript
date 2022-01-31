@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 66</title>
+    <style>
+
+        #painel {
+            width: 40vw;
+            height: 40vh;
+            padding: 2%;
+            border: solid 1px black;
+            border-radius: 1em;
+        }
+
+    </style>
+    <script>
+        
+        var painel
+        
+        window.addEventListener('load', iniciar)
+
+        function iniciar() {
+
+            painel = document.getElementById('painel')
+
+            let largura = screen.width
+            let altura = screen.height
+            let larguraDisponivel = screen.availWidth
+            let alturaDisponivel = screen.availHeight
+            let profundidadeCores = screen.colorDepth
+            let profundidadePixels = screen.pixelDepth
+
+            painel.innerHTML = `Dimensão da Tela: ${largura} x ${altura}<br>`
+            painel.innerHTML += `Dimensão da Tela (Disponível): ${larguraDisponivel} x ${alturaDisponivel}<br>`
+            painel.innerHTML += `Profundidade de Cores: ${profundidadeCores}<br>`
+            painel.innerHTML += `Profundidade de Pixels: ${profundidadePixels}<br>`
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <div id="painel"></div>
+    
+</body>
+</html>

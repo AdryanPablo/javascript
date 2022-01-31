@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 68</title>
+
+    <link rel="stylesheet" href="./Aula68.css">
+    <script>
+
+        var endereco = location.href
+        var mensagem = location.hash
+        var pesquisa = location.search
+        var painel
+        
+        if (mensagem) {
+
+            mensagem = mensagem.split('#')[1].replace('%20', ' ')
+
+        }
+
+        if (pesquisa) {
+
+            pesquisa = pesquisa.split('?')[1].replace('%20', ' ')
+
+        }
+
+        window.addEventListener('load', () => {
+
+            painel = document.getElementById('painel')
+            painel.insertAdjacentHTML('beforeend', `<p>Mensagem: ${mensagem}</p>`)
+            painel.insertAdjacentHTML('beforeend', `<p>Pesquisa: ${pesquisa}</p>`)
+            painel.insertAdjacentHTML('beforeend', `<p>Endereço: ${endereco}</p>`)
+
+        })
+
+    </script>
+</head>
+<body>
+
+    <h1>Auxiliar</h1>
+
+    <nav>
+        <a href="./Aula68.html">Home</a>
+    </nav>
+
+    <div id="painel"></div>
+    
+</body>
+</html>

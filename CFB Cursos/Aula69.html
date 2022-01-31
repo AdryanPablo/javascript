@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 69</title>
+
+    <link rel="stylesheet" href="./Aula69.css">
+    <script>
+
+        var botaoYoutube
+        var botaoFacebook
+        var botaoRecarregar
+
+        window.addEventListener('load', () => {
+
+            botaoYoutube = document.getElementById('botaoYoutube')
+            botaoFacebook = document.getElementById('botaoFacebook')
+            botaoRecarregar = document.getElementById('botaoRecarregar')
+
+            botaoYoutube.addEventListener('click', () => redirecionar('youtube'))
+            botaoFacebook.addEventListener('click', () => redirecionar('facebook'))
+            botaoRecarregar.addEventListener('click', recarregar)
+
+        })
+
+        function redirecionar(site) {
+
+            location.assign(`https://www.${site}.com`)
+            // location.replace(`https://www.${site}.com`) Não salva no histórico de navegação
+
+        }
+
+        function recarregar() {
+
+            location.reload()
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <button class="botao" id="botaoYoutube">Youtube</button>
+    <button class="botao" id="botaoFacebook">Facebook</button>
+    <button class="botao" id="botaoRecarregar">Recarregar</button>
+    
+</body>
+</html>
