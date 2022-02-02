@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 75</title>
+</head>
+<body>
+
+    <input type="text" id="entrada">
+    <button id="botaoAdicionar">Adicionar</button>
+
+    <button id="botaoContar">Contar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        
+        const entrada = document.getElementById('entrada')
+        const botaoAdicionar = document.getElementById('botaoAdicionar')
+        const botaoContar = document.getElementById('botaoContar')
+        const lista = document.getElementById('lista')
+
+        botaoAdicionar.addEventListener('click', adicionarElemento)
+        botaoContar.addEventListener('click', contarElementos)
+
+        function adicionarElemento() {
+
+            let elemento = document.createElement('li')
+            let tecnologia = entrada.value
+            elemento.textContent = tecnologia
+
+            lista.appendChild(elemento)
+            entrada.value = ''
+            entrada.focus()
+
+        }
+
+        function contarElementos() {
+
+            console.log(lista.childNodes)
+            alert(lista.childNodes.length)
+
+        }
+
+    </script>
+    
+</body>
+</html>

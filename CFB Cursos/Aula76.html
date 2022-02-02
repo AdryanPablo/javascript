@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 76</title>
+</head>
+<body>
+
+    <div id="tecnologias">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>Javascript</p>
+        <p>PHP</p>
+    </div>
+
+    <script>
+
+        const tecnologias = document.getElementById('tecnologias')
+        const nos = tecnologias.childNodes
+
+        trocarTag(1)
+
+        function trocarTag(posicao) {
+
+            let elementoAntigo = nos[posicao]
+            let conteudoAntigo = elementoAntigo.textContent
+            let elementoNovo = document.createElement('h1')
+            elementoNovo.textContent = conteudoAntigo
+
+            tecnologias.replaceChild(elementoNovo, elementoAntigo)
+        }
+
+    </script>
+    
+</body>
+</html>

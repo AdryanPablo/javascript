@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 73</title>
+</head>
+<body>
+
+    Item: <input type="text" id="entrada">
+    <button id="botao">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+
+        const entrada = document.getElementById('entrada')
+        const botao = document.getElementById('botao')
+        const lista = document.getElementById('lista')
+
+        botao.addEventListener('click', adicionarItem)
+
+        function adicionarItem() {
+
+            let conteudo = entrada.value
+            let item = document.createElement('li')
+            item.textContent = conteudo
+
+            lista.appendChild(item)
+            entrada.value = ''
+            entrada.focus()
+        }
+
+    </script>
+    
+</body>
+</html>

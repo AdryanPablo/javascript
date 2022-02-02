@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 77</title>
+</head>
+<body>
+
+    <ul id="lista">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>PHP</li>
+    </ul>
+
+    <script>
+
+        const lista = document.getElementById('lista')
+        const nos = lista.childNodes
+
+        removerEspacos()
+        contarNos()
+        removerNo(1)
+
+        function removerEspacos() {
+            
+            for (let contador = 0; contador < nos.length; contador++) {
+
+                let elemento = nos[contador]
+                let nomeElemento = elemento.nodeName
+
+                if (nomeElemento == '#text') {
+
+                    elemento.remove()
+                }
+            }
+        }
+
+        function contarNos() {
+
+            console.log(nos);
+            console.log(`Quantidade de nós: ${nos.length}`)
+
+        }
+
+        function removerNo(posicao) {
+            
+            let elemento = nos[posicao]
+
+            lista.removeChild(elemento)
+            console.log('Nó removido!');
+
+        }
+
+    </script>
+    
+</body>
+</html>
