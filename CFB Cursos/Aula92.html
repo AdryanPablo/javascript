@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 92</title>
+
+    <style>
+
+        #botaoAlternar {
+            width: 10em;
+            height: 2em;
+            margin: 1%;
+            background-color: transparent;
+            border: solid 0.1em black;
+            border-radius: 0.5em;
+            color: black;
+        }
+
+        #botaoAlternar:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #caixa {
+            width: 20em;            
+            height: 20em;
+            border: solid 0.1em black;
+            border-radius: 0.5em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="botaoAlternar">Esconder</button>
+    <div id="caixa"></div>
+
+    <script>
+        
+        const caixa = document.getElementById('caixa')
+        const botaoAlternar = document.getElementById('botaoAlternar')
+
+        botaoAlternar.addEventListener('click', alternarVisibilidade)
+
+        function alternarVisibilidade() {
+
+            if (caixa.hidden) {
+
+                caixa.hidden = false
+                botaoAlternar.textContent = 'Esconder'
+
+            } else {
+
+                caixa.hidden = true
+                botaoAlternar.textContent = 'Mostrar'
+
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
