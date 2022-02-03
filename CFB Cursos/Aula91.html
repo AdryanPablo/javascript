@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 91</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-areas: "Logo Navegacao";
+            width: 100%;
+            height: 10vh;
+            background-color: salmon;
+        }
+
+        h1 {
+            grid-area: Logo;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        h2 {
+            margin-bottom: 1%;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        nav {
+            grid-area: Navegacao;
+            display: flex;
+            align-items: center;
+        }
+
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+
+        li {
+            width: 20%;
+            padding: 1%;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        li:hover {
+            background-color: sandybrown;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 2% 0;
+        }
+
+        article {
+            width: 100%;
+            margin: 2% 0;
+            padding: 2% 10%;
+            border: solid 0.1em black;
+        }
+
+        p {
+            text-indent: 2%;
+            font-size: 1.2em;
+            line-height: 1.5em;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vh;
+            background-color: salmon;
+        }
+
+        footer > p {
+            width: 50%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Logo</h1>
+        <nav>
+            <ul>
+                <li id="botaoArtigo1">Artigo 1</li>
+                <li id="botaoArtigo2">Artigo 2</li>
+                <li id="botaoArtigo3">Artigo 3</li>
+                <li id="botaoArtigo4">Artigo 4</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article id="artigo1">
+            <h2>Artigo 1</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+        </article>
+
+        <article id="artigo2">
+            <h2>Artigo 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+        </article>
+
+        <article id="artigo3">
+            <h2>Artigo 3</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+        </article>
+
+        <article id="artigo4">
+            <h2>Artigo 4</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quo optio soluta at voluptatem eum molestias esse ea quam! Id rerum deserunt accusantium aliquam fugiat reprehenderit at delectus commodi nihil?</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; Marca</p>
+    </footer>
+
+    <script>
+
+        let botaoArtigo1 = document.getElementById('botaoArtigo1')
+        let botaoArtigo2 = document.getElementById('botaoArtigo2')
+        let botaoArtigo3 = document.getElementById('botaoArtigo3')
+        let botaoArtigo4 = document.getElementById('botaoArtigo4')
+
+        botaoArtigo1.setAttribute('data-artigo', 'artigo1')
+        botaoArtigo2.setAttribute('data-artigo', 'artigo2')
+        botaoArtigo3.setAttribute('data-artigo', 'artigo3')
+        botaoArtigo4.setAttribute('data-artigo', 'artigo4')
+
+        botaoArtigo1.addEventListener('click', rolarPagina)
+        botaoArtigo2.addEventListener('click', rolarPagina)
+        botaoArtigo3.addEventListener('click', rolarPagina)
+        botaoArtigo4.addEventListener('click', rolarPagina)
+
+        function rolarPagina() {
+
+            let botao = event.target
+            let artigo = document.getElementById(botao.dataset.artigo)
+
+            artigo.scrollIntoView()     
+
+        }
+
+    </script>
+    
+</body>
+</html>

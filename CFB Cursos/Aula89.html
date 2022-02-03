@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 89</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #painel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="painel"></div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quasi quibusdam sapiente eaque, placeat aliquam cumque. Eaque quidem inventore, reprehenderit porro reiciendis esse necessitatibus voluptates maiores ipsa aperiam voluptatibus voluptatum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate soluta delectus dolorum possimus, minima ut quasi illo ex reprehenderit debitis odio corporis? Numquam, hic voluptatum. Debitis porro alias enim.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit dignissimos voluptates minima quis ab minus, eius, est corporis dolorum quae quod obcaecati repudiandae earum nesciunt, consequatur nulla molestiae quia repellat.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, tenetur doloribus vel nemo quam dolorum asperiores praesentium dignissimos accusantium velit maiores quas incidunt aliquam suscipit porro! Doloremque temporibus aliquid dignissimos.
+    </p>
+
+    <script>
+
+        const painel = document.getElementById('painel')
+
+        setInterval(foco, 0)
+
+        function foco() {
+
+            if (document.hasFocus()) {
+
+                painel.style.display = 'none'
+
+            } else {
+
+                painel.style.display = 'block'
+
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

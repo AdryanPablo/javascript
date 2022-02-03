@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Aula 90</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #painel {
+            width: 20em;
+            height: 5em;
+            padding: 1%;
+            border: solid 0.1em black;
+            border-radius: 0.5em;
+        }
+
+        .bola {
+            width: 5em;
+            height: 5em;
+            margin: 1%;
+            border: solid 0.1em black;
+            border-radius: 50%;
+        }
+
+        #bola1 {
+            background-color: #f00;
+        }
+
+        #bola2 {
+            background-color: #0f0;
+        }
+
+        #bola3 {
+            background-color: #00f;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="painel"></div>
+
+    <div class="bola" id="bola1"></div>
+    <div class="bola" id="bola2"></div>
+    <div class="bola" id="bola3"></div>
+
+    <script>
+        
+        const painel = document.getElementById('painel')
+        
+        let bola1 = document.getElementById('bola1')
+        let bola2 = document.getElementById('bola2')
+        let bola3 = document.getElementById('bola3')
+
+        bola1.setAttribute('data-cor', 'Vermelho')
+        bola2.setAttribute('data-cor', 'Verde')
+        bola3.setAttribute('data-cor', 'Azul')
+
+        bola1.addEventListener('click', mostrarCaracteristicas)
+        bola2.addEventListener('click', mostrarCaracteristicas)
+        bola3.addEventListener('click', mostrarCaracteristicas)
+
+        function mostrarCaracteristicas() {
+
+            let elemento = event.target
+
+            painel.textContent = `Cor da Bola: ${elemento.dataset.cor}`
+
+        }
+
+    </script>
+    
+</body>
+</html>
